@@ -11,6 +11,9 @@ import {DEFAULT_INTERESTED_ACTIVITIES, InterestedActivities} from '../interfaces
 export class SurveyComponent implements OnInit {
 
   preferredAge: boolean;
+  isEnglish = false;
+  isBangla = false;
+
   interestedField: [InterestedActivities];
   applicantFullName: string;
   applicantNickName: string;
@@ -98,5 +101,15 @@ export class SurveyComponent implements OnInit {
     }).catch( error => {
       console.log(error);
     });
+  }
+
+  onEnglish(): void {
+    this.isEnglish = true;
+    this.isBangla = false;
+  }
+
+  onBangla(): void {
+    this.isBangla = true;
+    this.isEnglish = false;
   }
 }

@@ -8,37 +8,56 @@
       What language are you interested in participating in?
     </p>
     <div class="d-flex">
-      <button class="btn btn-primary">English(ইংরেজী)</button>
-      <button class="btn btn-primary">Bangla(বাংলা)</button>
+      <button (click)="onEnglish()" class="btn btn-primary">English(ইংরেজী)</button>
+      <button (click)="onBangla()" class="btn btn-primary">Bangla(বাংলা)</button>
     </div>
   </div>
-  <div class="card mt-4 mb-4">
+  <div *ngIf="isEnglish == true || isBangla == true" class="card mt-4 mb-4">
     <div class="card-header">
-      <h2 class="text-center">Registration form</h2>
+      <h2 class="text-center m-0">Registration form</h2>
     </div>
     <div class="card-body">
-      <p>This registration form is only for adolescents and young adults between the ages of 10-35.
+      <p *ngIf="isEnglish == true && isBangla == false">This registration form is only for adolescents and young adults between the ages of 10-35.
         If you are one of those ages, fill out this registration form according to your interests.
         You are requested to complete this registration form to participate in the various activities of Probha Aurora.
         Although the activities of this institution are mainly based on the context of Bangladesh,
         teenagers and young adults from any country of the world can also participate in these activities.
       </p>
+      <p *ngIf="isBangla == true && isEnglish == false">
+        এই রেজিস্ট্রেশন ফর্মটি শুধুমাত্র ১০-৩৫ বছর বয়সী কিশোর-কিশোরী এবং তরুণ-তরুণীদের জন্যে।
+        আপনি সেই বয়সের মধ্যে একজন হয়ে থাকলে আপনার আগ্রহ অনুসারে এই রেজিস্ট্রেশন ফর্মটি পূরণ করুন।
+        প্রভা অরোরার বিভিন্নমুখি কার্যক্রমে অংশগ্রহণের জন্য আপনাকে এই রেজিস্ট্রেশন ফর্মটি পূরণ করতে অনুরোধ জানাচ্ছি।
+        এই প্রতিষ্ঠানের কার্যক্রমসমূহ মূলত বাংলাদেশের প্রেক্ষাপট বিবেচনায় নিয়ে পরিচালিত হলেও বিশ্বের যে কোনো দেশের কিশোর ও
+        তরুণ-তরুণীরাও এ সকল কার্যক্রমে অংশগ্রহণ করতে পারবেন।
+      </p>
     </div>
   </div>
-  <div class="card mb-2">
+  <div *ngIf="isEnglish == true || isBangla == true" class="card mb-2">
       <div class="card-header">
-        My age is between 10-35 years.
+        <div *ngIf="isEnglish == true">My age is between 10-35 years.</div>
+        <div *ngIf="isBangla == true">আমার বয়স ১০-৩৫ বছরের মধ্যে।</div>
       </div>
       <div class="card-body preferredAge" [ngClass]="preferredAge == true? 'd-none' : ''">
-        <button (click)="onYes()" class="btn btnYes">Yes</button>
-        <button (click)="onNo()" class="btn btnNo">No</button>
-        <div *ngIf="preferredAge == false" class="alert alert-danger mt-2 p-2">
+        <div *ngIf="isEnglish == true && isBangla == false">
+          <button (click)="onYes()" class="btn btnYes">Yes</button>
+          <button (click)="onNo()" class="btn btnNo">No</button>
+        </div>
+        <div *ngIf="isEnglish == false && isBangla == true">
+          <button (click)="onYes()" class="btn btnYes">হ্যাঁ</button>
+          <button (click)="onNo()" class="btn btnNo">না</button>
+        </div>
+        <div *ngIf="preferredAge == false && isEnglish == true" class="alert alert-danger mt-2 p-2">
           We sincerely thank you for your interest in participating in our activities. However, this activity only applies to certain ages.
           So please join the institution's website or social media pages to participate in our other activities.
         </div>
+        <div *ngIf="preferredAge == false && isBangla == true" class="alert alert-danger mt-2 p-2">
+          আমাদের কার্যক্রমে অংশগ্রহণের আগ্রহ প্রকাশ করায় আপনাকে আন্তরিক ধন্যবাদ জানাচ্ছি।
+          তবে এই কার্যক্রমটি শুধুমাত্র নির্দিষ্ট বয়সীদের জন্য প্রযোজ্য। তাই অনুগ্রহ করে প্রতিষ্ঠানের ওয়েবসাইট অথবা সোশ্যাল মিডিয়া
+          পেজসমূহে যুক্ত থেকে আমাদের অন্যান্য কার্যক্রমসমূহে অংশগ্রহণের জন্য আপনাকে অনুরোধ জানাচ্ছি।
+        </div>
       </div>
   </div>
-  <div *ngIf="preferredAge == true" class="form" (submit)="onSubmit()">
+  <div *ngIf="preferredAge == true && isEnglish == true" class="form englishForm" (submit)="onSubmit()">
     <div class="card mb-2 p-3">
       <div class="formQuestion">
         <strong>What kind of activities are you interested in?</strong>
@@ -127,6 +146,465 @@
         </div>
         <div class="form-group mb-3">
           <label>Mobile number <span class="small">(Please remember which mobile number you are entering.)</span></label>
+          <input type="number" class="form-control" name="phone" [(ngModel)]="applicantPhone">
+        </div>
+      </div>
+    </div>
+    <div class="card mb-2">
+      <div class="card-header">
+        Educational Qualifications
+      </div>
+      <div class="card-body">
+        <div class="formQuestion mb-2">
+          Give full details. N.B please give exact name of institution and titles of degrees. Please do not translate or equate to other degrees
+          Schools or other formal training or education from age 10 (e.g high school, technical school or apprenticeship), University or equivalent
+        </div>
+        <div class="col-md-6">
+          <div class="form-group mb-3">
+            <label>Institution Name</label>
+            <input type="string" class="form-control" [(ngModel)]="institutionName">
+          </div>
+          <div class="form-group mb-3">
+            <label>Address</label>
+            <input type="text" class="form-control" [(ngModel)]="institutionAddress">
+          </div>
+          <div class="form-group mb-3">
+            <label>Country</label>
+            <input type="text" class="form-control" [(ngModel)]="institutionCountry">
+          </div>
+          <div class="form-group mb-3">
+            <label>Years attended</label>
+            <div class="educationDuration d-flex">
+              <div class="mr-1">
+                <label class="small">From</label>
+                <input type="date" class="form-control" [(ngModel)]="educationStartDate">
+              </div>
+              <div>
+                <label class="small">To</label>
+                <input type="date" class="form-control" [(ngModel)]="educationEndDate">
+              </div>
+            </div>
+          </div>
+          <div class="form-group mb-3">
+            <label>Type / Degrees and academic distinctions</label>
+            <input type="text" class="form-control" [(ngModel)]="applicantDegree">
+          </div>
+          <div class="form-group mb-3">
+            <label>Certificates or diplomas obtained / Main Course of study</label>
+            <input type="text" class="form-control" [(ngModel)]="applicantCertificate">
+          </div>
+          <div class="form-group mb-3">
+            <label>Your personal email address<span class="small">(if you have any)</span></label>
+            <input type="email" class="form-control" [(ngModel)]="applicantEmail">
+          </div>
+          <div class="form-group mb-3">
+            <label>Blood group <span class="small">(if you know)</span> </label>
+            <input type="text" class="form-control" [(ngModel)]="applicantBloodGroup">
+          </div>
+          <div class="bloodDonation mb-3">
+            <label>I am Interested in donating blood</label>
+            <div class="form-check">
+              <input class="form-check-input" type="radio" name="bloodDonation" value="Yes"
+                     [(ngModel)]="interestedInBloodDonation" checked>
+              <label class="form-check-label">
+                Yes
+              </label>
+            </div>
+            <div class="form-check">
+              <input class="form-check-input" type="radio" name="bloodDonation" value="No"
+                     [(ngModel)]="notInterestedInBloodDonation" checked>
+              <label class="form-check-label">
+                No
+              </label>
+            </div>
+            <div class="form-check">
+              <input class="form-check-input" type="radio" name="bloodDonation" value="Interested in future"
+                     [(ngModel)]="InterestedInBloodDonationInFuture" checked>
+              <label class="form-check-label">
+                I am not old enough to donate blood yet, eager to give in the future
+              </label>
+            </div>
+          </div>
+          <div class="form-group mb-3">
+            <label>Birthday</label>
+            <input type="date" class="form-control" [(ngModel)]="applicantBirthday">
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="specialQualities card p-3 mb-3">
+      <strong>Special Qualities<span class="small"> (Multiple options can be selected)</span></strong>
+      <div class="form-check mb-1">
+        <input class="form-check-input" type="checkbox" value="">
+        <label class="form-check-label">
+          Time Management
+        </label>
+      </div>
+      <div class="form-check mb-1">
+        <input class="form-check-input" type="checkbox" value="">
+        <label class="form-check-label">
+          Stress Management
+        </label>
+      </div>
+      <div class="form-check mb-1">
+        <input class="form-check-input" type="checkbox" value="">
+        <label class="form-check-label">
+          Study Skills
+        </label>
+      </div>
+      <div class="form-check mb-1">
+        <input class="form-check-input" type="checkbox" value="">
+        <label class="form-check-label">
+          Money Management
+        </label>
+      </div>
+      <div class="form-check mb-1">
+        <input class="form-check-input" type="checkbox" value="">
+        <label class="form-check-label">
+          Assertiveness skills
+        </label>
+      </div>
+      <div class="form-check mb-1">
+        <input class="form-check-input" type="checkbox" value="">
+        <label class="form-check-label">
+          Well-developed self care skills
+        </label>
+      </div>
+      <div class="form-check mb-1">
+        <input class="form-check-input" type="checkbox" value="">
+        <label class="form-check-label">
+          Keeping safe and abiding risky behaviors
+        </label>
+      </div>
+      <div class="form-check mb-1">
+        <input class="form-check-input" type="checkbox" value="">
+        <label class="form-check-label">
+          Seeking assistance when needed
+        </label>
+      </div>
+      <div class="form-check mb-1">
+        <input class="form-check-input" type="checkbox" value="">
+        <label class="form-check-label">
+          Respecting the rules and policies
+        </label>
+      </div>
+      <div class="form-check mb-1">
+        <input class="form-check-input" type="checkbox" value="">
+        <label class="form-check-label">
+          Displaying honesty, integrity and perseverance
+        </label>
+      </div>
+      <div class="form-check mb-1">
+        <input class="form-check-input" type="checkbox" value="">
+        <label class="form-check-label">
+          Technical skills: Programming languages, Common operating systems,
+          Software proficiency, Technical writing, Project management,
+          Data analysis, updating website, design work
+        </label>
+      </div>
+      <div class="form-check mb-1">
+        <input class="form-check-input" type="checkbox" value="">
+        <label class="form-check-label">
+          Photography
+        </label>
+      </div>
+    </div>
+    <div class="hobbies card p-3 mb-3">
+      <strong>My hobbies/ interest</strong>
+      <div class="form-check mb-1">
+        <input class="form-check-input" type="checkbox" value="">
+        <label class="form-check-label">
+          Reading books
+        </label>
+      </div>
+      <div class="form-check mb-1">
+        <input class="form-check-input" type="checkbox" value="">
+        <label class="form-check-label">
+          Blogging
+        </label>
+      </div>
+      <div class="form-check mb-1">
+        <input class="form-check-input" type="checkbox" value="">
+        <label class="form-check-label">
+          Dancing
+        </label>
+      </div>
+      <div class="form-check mb-1">
+        <input class="form-check-input" type="checkbox" value="">
+        <label class="form-check-label">
+          Singing
+        </label>
+      </div>
+      <div class="form-check mb-1">
+        <input class="form-check-input" type="checkbox" value="">
+        <label class="form-check-label">
+          Listening to music
+        </label>
+      </div>
+      <div class="form-check mb-1">
+        <input class="form-check-input" type="checkbox" value="">
+        <label class="form-check-label">
+          Playing musical instruments (piano, guitar etc.)
+        </label>
+      </div>
+      <div class="form-check mb-1">
+        <input class="form-check-input" type="checkbox" value="">
+        <label class="form-check-label">
+          Learning new languages
+        </label>
+      </div>
+      <div class="form-check mb-1">
+        <input class="form-check-input" type="checkbox" value="">
+        <label class="form-check-label">
+          Shopping
+        </label>
+      </div>
+      <div class="form-check mb-1">
+        <input class="form-check-input" type="checkbox" value="">
+        <label class="form-check-label">
+          Traveling
+        </label>
+      </div>
+      <div class="form-check mb-1">
+        <input class="form-check-input" type="checkbox" value="">
+        <label class="form-check-label">
+          Exercising
+        </label>
+      </div>
+      <div class="form-check mb-1">
+        <input class="form-check-input" type="checkbox" value="">
+        <label class="form-check-label">
+          Drawing
+        </label>
+      </div>
+      <div class="form-check mb-1">
+        <input class="form-check-input" type="checkbox" value="">
+        <label class="form-check-label">
+          Painting
+        </label>
+      </div>
+      <div class="form-check mb-1">
+        <input class="form-check-input" type="checkbox" value="">
+        <label class="form-check-label">
+          Collecting things
+        </label>
+      </div>
+      <div class="form-check mb-1">
+        <input class="form-check-input" type="checkbox" value="">
+        <label class="form-check-label">
+          Playing computer games
+        </label>
+      </div>
+      <div class="form-check mb-1">
+        <input class="form-check-input" type="checkbox" value="">
+        <label class="form-check-label">
+          Cooking
+        </label>
+      </div>
+      <div class="form-check mb-1">
+        <input class="form-check-input" type="checkbox" value="">
+        <label class="form-check-label">
+          Gardening
+        </label>
+      </div>
+      <div class="form-check mb-1">
+        <input class="form-check-input" type="checkbox" value="">
+        <label class="form-check-label">
+          Doing crafts (handmade)
+        </label>
+      </div>
+      <div class="form-check mb-1">
+        <input class="form-check-input" type="checkbox" value="">
+        <label class="form-check-label">
+          Embroidering
+        </label>
+      </div>
+      <div class="form-check mb-1">
+        <input class="form-check-input" type="checkbox" value="">
+        <label class="form-check-label">
+          Sewing
+        </label>
+      </div>
+      <div class="form-check mb-1">
+        <input class="form-check-input" type="checkbox" value="">
+        <label class="form-check-label">
+          Playing board games
+        </label>
+      </div>
+      <div class="form-check mb-1">
+        <input class="form-check-input" type="checkbox" value="">
+        <label class="form-check-label">
+          Walking
+        </label>
+      </div>
+      <div class="form-check mb-1">
+        <input class="form-check-input" type="checkbox" value="">
+        <label class="form-check-label">
+          Writing stories
+        </label>
+      </div>
+      <div class="form-check mb-1">
+        <input class="form-check-input" type="checkbox" value="">
+        <label class="form-check-label">
+          Fishing
+        </label>
+      </div>
+      <div class="form-group mb-1">
+        <label>Other: please specify ...</label>
+        <input class="form-control" type="text" >
+      </div>
+    </div>
+    <div class="opportunities card p-3 mb-3">
+      <strong>Have you ever had the opportunity to learn about the program you are interested in participating in?</strong>
+      <div class="form-check mb-1">
+        <input class="form-check-input" type="checkbox" value="">
+        <label class="form-check-label">
+          From various social media
+        </label>
+      </div>
+      <div class="form-check mb-1">
+        <input class="form-check-input" type="checkbox" value="">
+        <label class="form-check-label">
+          Not yet. So curious to know
+        </label>
+      </div>
+      <div class="form-check mb-1">
+        <input class="form-check-input" type="checkbox" value="">
+        <label class="form-check-label">
+          From friends
+        </label>
+      </div>
+      <div class="form-check mb-1">
+        <input class="form-check-input" type="checkbox" value="">
+        <label class="form-check-label">
+          From colleagues
+        </label>
+      </div>
+      <div class="form-check mb-1">
+        <input class="form-check-input" type="checkbox" value="">
+        <label class="form-check-label">
+          From family
+        </label>
+      </div>
+      <div class="form-check mb-1">
+        <input class="form-check-input" type="checkbox" value="">
+        <label class="form-check-label">
+          From the teacher
+        </label>
+      </div>
+      <div class="form-check mb-1">
+        <input class="form-check-input" type="checkbox" value="">
+        <label class="form-check-label">
+          Read books, outside the textbook
+        </label>
+      </div>
+      <div class="form-check mb-1">
+        <input class="form-check-input" type="checkbox" value="">
+        <label class="form-check-label">
+          In collaboration with the media (watching television programs, listening to radio programs, etc.)
+        </label>
+      </div>
+      <div class="form-check mb-1">
+        <input class="form-check-input" type="checkbox" value="">
+        <label class="form-check-label">
+          Read textbooks
+        </label>
+      </div>
+      <div class="form-group mb-1">
+        <label>Other: please specify ...</label>
+        <input class="form-control" type="text" >
+      </div>
+    </div>
+  </div>
+  <div *ngIf="preferredAge == true && isBangla == true" class="form banglaForm" (submit)="onSubmit()">
+    <div class="card mb-2 p-3">
+      <div class="formQuestion">
+        <strong>আপনি কোন ধরনের কার্যক্রমে অংশ নিতে আগ্রহী?</strong>
+        <div class="small">(যে কোনো একটিতে কিংবা একাধিক ক্ষেত্রেও একইসাথে রেজিস্ট্রেশন করা যাবে)</div>
+      </div>
+      <div class="form-check mt-2">
+        <input type="checkbox" class="form-check-input" name="Awareness-activities" [(ngModel)]="awarenessField">
+        <label class="from-check-label" fro="Awareness activities">সচেতনতামূলক কার্যক্রম</label>
+      </div>
+      <div class="form-check">
+        <input type="checkbox" class="form-check-input" name="capacity-building-and-training"[(ngModel)]="capacityBuildingNtrainingField">
+        <label class="from-check-label" fro="capacity-building-and-training">সক্ষমতা বৃদ্ধি ও প্রশিক্ষণ</label>
+      </div>
+      <div class="form-check">
+        <input type="checkbox" class="form-check-input" name="research" [(ngModel)]="researchField">
+        <label class="from-check-label" fro="research">গবেষণা</label>
+      </div>
+      <div class="form-check">
+        <input type="checkbox" class="form-check-input" name="special-activities" [(ngModel)]="otherField">
+        <label class="from-check-label" fro="special-activities">প্রভা অরোরা‘র অন্যান্য বিশেষ কার্যক্রম</label>
+      </div>
+    </div>
+    <div class="card mb-2 p-3">
+      <div class="col-md-6">
+        <div class="formQuestion mb-2">
+          <strong>অনুগ্রহ করে ভালোভাবে পড়ুন ও সঠিক তথ্য দিন</strong>
+        </div>
+        <div class="form-group mb-3">
+          <label>আপনার পুরো নাম</label>
+          <input type="text" class="form-control" [(ngModel)]="applicantFullName">
+        </div>
+        <div class="form-group mb-3">
+          <label>আপনার ডাক নাম</label>
+          <input type="text" class="form-control" [(ngModel)]="applicantNickName">
+        </div>
+        <div class="form-group mb-3">
+          <label>লিঙ্গ</label>
+          <select  name="gender" class="form-control" [(ngModel)]="applicantGender">
+            <option value="male">পুরুষ</option>
+            <option value="female">নারী</option>
+            <option value="others">অন্যান্য</option>
+          </select>
+        </div>
+        <div class="form-group mb-3">
+          <label>দেশের নাম</label>
+          <select name="country" class="form-control" [(ngModel)]="applicantCountry">
+            <option value="bangladesh">Bangladesh</option>
+          </select>
+        </div>
+        <div class="form-group mb-3">
+          <lable for="address">
+            বিস্তারিত ঠিকানা
+            <span class="small">(শুধুমাত্র বিদেশীদের ক্ষেত্রে প্রযোজ্য)</span>
+          </lable>
+          <textarea name="address" class="form-control" [(ngModel)]="applicantAddress"></textarea>
+        </div>
+        <div class="form-group mb-3">
+          <label>বিভাগের নাম</label>
+          <select name="division" class="form-control" [(ngModel)]="applicantDivision">
+            <option value="dhaka">Dhaka</option>
+          </select>
+        </div>
+        <div class="form-group mb-3">
+          <label>জেলার নাম</label>
+          <select name="district" class="form-control" [(ngModel)]="applicantDistrict">
+            <option value="dhaka">Dhaka</option>
+          </select>
+        </div>
+        <div class="form-group mb-3">
+          <label>আপনার বয়স</label>
+          <input type="number" name="age" class="form-control" min="10" max="35" [(ngModel)]="applicantAge">
+        </div>
+        <div *ngIf="applicantAge < 18 && applicantAge != ''" class="mb-2">
+          <div class="form-group mb-3">
+            <label>যে কোন একজন বৈধ অভিভাবকের নাম</label>
+            <input type="text" class="form-control" name="guardianName" [(ngModel)]="guardianName">
+          </div>
+          <div class="form-group mb-3">
+            <label>অভিভাবকের জাতীয় পরিচয়পত্র / পাসপোর্ট নম্বর:</label>
+            <input type="number" class="form-control" name="guardianNID" [(ngModel)]="guardianPassportNumber">
+          </div>
+        </div>
+        <div *ngIf="applicantAge >= 18 && applicantAge != ''" class="form-group mb-3">
+          <lable>আপনার জাতীয় পরিচয়পত্র / পাসপোর্ট নম্বর</lable>
+          <input type="number" class="form-control" name="NID" [(ngModel)]="applicantNID">
+        </div>
+        <div class="form-group mb-3">
+          <label>নিজের /অভিভাবকের/ অফিসের <span class="small">(অনুগ্রহ করে কোন নাম্বারটি লিখছেন তা মনে রাখুন)</span></label>
           <input type="number" class="form-control" name="phone" [(ngModel)]="applicantPhone">
         </div>
       </div>

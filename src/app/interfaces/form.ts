@@ -1,7 +1,7 @@
 import { InterestedActivities } from './interested-activities';
 
 export interface ApplicantForm {
-  interestedActivities: [InterestedActivities];
+  interestedActivities: InterestedActivities[];
   fullName: string;
   nickName: string;
   gender: string;
