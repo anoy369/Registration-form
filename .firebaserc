@@ -1,0 +1,11 @@
+{
+  "targets": {
+    "practices-ade9d": {
+      "hosting": {
+        "registration-form": [
+          "practices-ade9d"
+        ]
+      }
+    }
+  }
+}
