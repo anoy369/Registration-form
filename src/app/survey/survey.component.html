@@ -515,6 +515,439 @@
         <input class="form-control" type="text" >
       </div>
     </div>
+    <div class="futureCareer card p-3 mb-3">
+      <div class="form-group">
+        <label>What do you want to be in the future? Write in a few words….</label>
+        <textarea type="text" class="form-control"></textarea>
+      </div>
+    </div>
+    <div class="climateChange card mb-3">
+      <div class="card-header">
+        Climate Change
+      </div>
+      <div class="card-body">
+        <label>How important do you think the issue is?</label>
+        <div class="form-check">
+          <input class="form-check-input" type="radio" name="importanceAboutClimateChange" value="very important">
+          <label class="from-check-label">Very important</label>
+        </div>
+        <div class="form-check">
+          <input class="form-check-input" type="radio" name="importanceAboutClimateChange" value="important">
+          <label class="from-check-label">Important</label>
+        </div>
+        <div class="form-check">
+          <input class="form-check-input" type="radio" name="importanceAboutClimateChange" value="not important">
+          <label class="from-check-label">Not important</label>
+        </div>
+        <div class="form-check">
+          <input class="form-check-input" type="radio" name="importanceAboutClimateChange" value="absolutely not important">
+          <label class="from-check-label">Absolutely not important</label>
+        </div>
+        <div class="mt-4">
+          <label>I am looking forward to participating in an awareness online event on Climate Change</label>
+          <div class="form-check">
+            <input class="form-check-input" type="radio" name="participatingOnlineAwareness" value="yes" [(ngModel)]="practicingOnlineAwareness">
+            <label class="form-check-label">Yes</label>
+          </div>
+          <div class="form-check">
+            <input class="form-check-input" type="radio" name="participatingOnlineAwareness" value="no" [(ngModel)]="practicingOnlineAwareness">
+            <label class="form-check-label">No</label>
+          </div>
+          <div *ngIf="practicingOnlineAwareness == 'yes'" class="alert alert-success">
+            Thank you. We will contact you as soon as possible.
+          </div>
+        </div>
+        <div class="mt-4">
+          <label>I would like to participate in awareness activities on a regular</label>
+          <div class="form-check">
+            <input class="form-check-input" type="radio" name="regularAwarenessPractice" value="yes" [(ngModel)]="regularAwarenessPractice">
+            <label class="form-check-label">Yes</label>
+          </div>
+          <div class="form-check">
+            <input class="form-check-input" type="radio" name="regularAwarenessPractice" value="no" [(ngModel)]="regularAwarenessPractice">
+            <label class="form-check-label">No</label>
+          </div>
+          <div *ngIf="regularAwarenessPractice == 'yes'" class="alert alert-success">
+            Thank you. We will take the matter seriously. However, we request you to keep an eye on this issue on social media on a regular basis.
+          </div>
+        </div>
+        <div class="mt-4">
+          <label>I am interested in doing more advanced awareness courses on this subject for a fee and would like to work to make others aware of this.</label>
+          <div class="form-check">
+            <input class="form-check-input" type="radio" name="awarenessCourse" value="yes" [(ngModel)]="awarenessCourse">
+            <label class="form-check-label">Yes</label>
+          </div>
+          <div class="form-check">
+            <input class="form-check-input" type="radio" name="awarenessCourse" value="no" [(ngModel)]="awarenessCourse">
+            <label class="form-check-label">No</label>
+          </div>
+          <div *ngIf="awarenessCourse == 'yes'" class="mt-4">
+            <label>If it is a standard certified course, will you do it with a fee?</label>
+            <div class="form-check">
+              <input class="form-check-input" type="radio" name="awarenessCourseWithFee" value="I/guardian will agree to pay" [(ngModel)]="awarenessCourseWithFee">
+              <label class="form-check-label">I / my guardian will agree to pay the fee</label>
+            </div>
+            <div class="form-check">
+              <input class="form-check-input" type="radio" name="awarenessCourseWithFee" value="I can't but can get a sponser" [(ngModel)]="awarenessCourseWithFee">
+              <label class="form-check-label">I can't afford to pay the fee but I can get a sponsor</label>
+            </div>
+            <div class="form-check">
+              <input class="form-check-input" type="radio" name="awarenessCourseWithFee" value="I can't so will need a sponsore" [(ngModel)]="awarenessCourseWithFee">
+              <label class="form-check-label">I can't pay the fee so I will need a sponsor</label>
+            </div>
+            <div class="form-check">
+              <input class="form-check-input" type="radio" name="awarenessCourseWithFee" value="explainedSituation" [(ngModel)]="awarenessCourseWithFee">
+              <label class="form-check-label">Briefly explain why it is not possible to pay the fee:</label>
+            </div>
+            <div *ngIf="awarenessCourseWithFee == 'explainedSituation'" class="form-group">
+              <textarea class="form-control" name="awarenessCourseWithFee"></textarea>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="moralValues card mb-3">
+      <div class="card-header">
+        Moral Values
+      </div>
+      <div class="card-body">
+        <label>How important do you think the issue is?</label>
+        <div class="form-check">
+          <input class="form-check-input" type="radio" name="moralValues" value="very important">
+          <label class="from-check-label">Very important</label>
+        </div>
+        <div class="form-check">
+          <input class="form-check-input" type="radio" name="moralValues" value="important">
+          <label class="from-check-label">Important</label>
+        </div>
+        <div class="form-check">
+          <input class="form-check-input" type="radio" name="moralValues" value="not important">
+          <label class="from-check-label">Not important</label>
+        </div>
+        <div class="form-check">
+          <input class="form-check-input" type="radio" name="moralValues" value="absolutely not important">
+          <label class="from-check-label">Absolutely not important</label>
+        </div>
+        <div class="mt-4">
+          <label>I am looking forward to participating in an awareness online event on Climate Change</label>
+          <div class="form-check">
+            <input class="form-check-input" type="radio" name="participatingOnlineAwareness" value="yes" [(ngModel)]="practicingOnlineAwareness">
+            <label class="form-check-label">Yes</label>
+          </div>
+          <div class="form-check">
+            <input class="form-check-input" type="radio" name="participatingOnlineAwareness" value="no" [(ngModel)]="practicingOnlineAwareness">
+            <label class="form-check-label">No</label>
+          </div>
+          <div *ngIf="practicingOnlineAwareness == 'yes'" class="alert alert-success">
+            Thank you. We will contact you as soon as possible.
+          </div>
+        </div>
+        <div class="mt-4">
+          <label>I would like to participate in awareness activities on a regular</label>
+          <div class="form-check">
+            <input class="form-check-input" type="radio" name="regularAwarenessPractice" value="yes" [(ngModel)]="regularAwarenessPractice">
+            <label class="form-check-label">Yes</label>
+          </div>
+          <div class="form-check">
+            <input class="form-check-input" type="radio" name="regularAwarenessPractice" value="no" [(ngModel)]="regularAwarenessPractice">
+            <label class="form-check-label">No</label>
+          </div>
+          <div *ngIf="regularAwarenessPractice == 'yes'" class="alert alert-success">
+            Thank you. We will take the matter seriously. However, we request you to keep an eye on this issue on social media on a regular basis.
+          </div>
+        </div>
+        <div class="mt-4">
+          <label>I am interested in doing more advanced awareness courses on this subject for a fee and would like to work to make others aware of this.</label>
+          <div class="form-check">
+            <input class="form-check-input" type="radio" name="awarenessCourse" value="yes" [(ngModel)]="awarenessCourse">
+            <label class="form-check-label">Yes</label>
+          </div>
+          <div class="form-check">
+            <input class="form-check-input" type="radio" name="awarenessCourse" value="no" [(ngModel)]="awarenessCourse">
+            <label class="form-check-label">No</label>
+          </div>
+          <div *ngIf="awarenessCourse == 'yes'" class="mt-4">
+            <label>If it is a standard certified course, will you do it with a fee?</label>
+            <div class="form-check">
+              <input class="form-check-input" type="radio" name="awarenessCourseWithFee" value="I/guardian will agree to pay" [(ngModel)]="awarenessCourseWithFee">
+              <label class="form-check-label">I / my guardian will agree to pay the fee</label>
+            </div>
+            <div class="form-check">
+              <input class="form-check-input" type="radio" name="awarenessCourseWithFee" value="I can't but can get a sponser" [(ngModel)]="awarenessCourseWithFee">
+              <label class="form-check-label">I can't afford to pay the fee but I can get a sponsor</label>
+            </div>
+            <div class="form-check">
+              <input class="form-check-input" type="radio" name="awarenessCourseWithFee" value="I can't so will need a sponsore" [(ngModel)]="awarenessCourseWithFee">
+              <label class="form-check-label">I can't pay the fee so I will need a sponsor</label>
+            </div>
+            <div class="form-check">
+              <input class="form-check-input" type="radio" name="awarenessCourseWithFee" value="explainedSituation" [(ngModel)]="awarenessCourseWithFee">
+              <label class="form-check-label">Briefly explain why it is not possible to pay the fee:</label>
+            </div>
+            <div *ngIf="awarenessCourseWithFee == 'explainedSituation'" class="form-group">
+              <textarea class="form-control" name="awarenessCourseWithFee"></textarea>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="ethical Issues card mb-3">
+      <div class="card-header">
+        Ethical Issues
+      </div>
+      <div class="card-body">
+        <label>How important do you think the issue is?</label>
+        <div class="form-check">
+          <input class="form-check-input" type="radio" name="ethicalIssues" value="very important">
+          <label class="from-check-label">Very important</label>
+        </div>
+        <div class="form-check">
+          <input class="form-check-input" type="radio" name="ethicalIssues" value="important">
+          <label class="from-check-label">Important</label>
+        </div>
+        <div class="form-check">
+          <input class="form-check-input" type="radio" name="ethicalIssues" value="not important">
+          <label class="from-check-label">Not important</label>
+        </div>
+        <div class="form-check">
+          <input class="form-check-input" type="radio" name="ethicalIssues" value="absolutely not important">
+          <label class="from-check-label">Absolutely not important</label>
+        </div>
+        <div class="mt-4">
+          <label>I am looking forward to participating in an awareness online event on Climate Change</label>
+          <div class="form-check">
+            <input class="form-check-input" type="radio" name="participatingOnlineAwareness" value="yes" [(ngModel)]="practicingOnlineAwareness">
+            <label class="form-check-label">Yes</label>
+          </div>
+          <div class="form-check">
+            <input class="form-check-input" type="radio" name="participatingOnlineAwareness" value="no" [(ngModel)]="practicingOnlineAwareness">
+            <label class="form-check-label">No</label>
+          </div>
+          <div *ngIf="practicingOnlineAwareness == 'yes'" class="alert alert-success">
+            Thank you. We will contact you as soon as possible.
+          </div>
+        </div>
+        <div class="mt-4">
+          <label>I would like to participate in awareness activities on a regular</label>
+          <div class="form-check">
+            <input class="form-check-input" type="radio" name="regularAwarenessPractice" value="yes" [(ngModel)]="regularAwarenessPractice">
+            <label class="form-check-label">Yes</label>
+          </div>
+          <div class="form-check">
+            <input class="form-check-input" type="radio" name="regularAwarenessPractice" value="no" [(ngModel)]="regularAwarenessPractice">
+            <label class="form-check-label">No</label>
+          </div>
+          <div *ngIf="regularAwarenessPractice == 'yes'" class="alert alert-success">
+            Thank you. We will take the matter seriously. However, we request you to keep an eye on this issue on social media on a regular basis.
+          </div>
+        </div>
+        <div class="mt-4">
+          <label>I am interested in doing more advanced awareness courses on this subject for a fee and would like to work to make others aware of this.</label>
+          <div class="form-check">
+            <input class="form-check-input" type="radio" name="awarenessCourse" value="yes" [(ngModel)]="awarenessCourse">
+            <label class="form-check-label">Yes</label>
+          </div>
+          <div class="form-check">
+            <input class="form-check-input" type="radio" name="awarenessCourse" value="no" [(ngModel)]="awarenessCourse">
+            <label class="form-check-label">No</label>
+          </div>
+          <div *ngIf="awarenessCourse == 'yes'" class="mt-4">
+            <label>If it is a standard certified course, will you do it with a fee?</label>
+            <div class="form-check">
+              <input class="form-check-input" type="radio" name="awarenessCourseWithFee" value="I/guardian will agree to pay" [(ngModel)]="awarenessCourseWithFee">
+              <label class="form-check-label">I / my guardian will agree to pay the fee</label>
+            </div>
+            <div class="form-check">
+              <input class="form-check-input" type="radio" name="awarenessCourseWithFee" value="I can't but can get a sponser" [(ngModel)]="awarenessCourseWithFee">
+              <label class="form-check-label">I can't afford to pay the fee but I can get a sponsor</label>
+            </div>
+            <div class="form-check">
+              <input class="form-check-input" type="radio" name="awarenessCourseWithFee" value="I can't so will need a sponsore" [(ngModel)]="awarenessCourseWithFee">
+              <label class="form-check-label">I can't pay the fee so I will need a sponsor</label>
+            </div>
+            <div class="form-check">
+              <input class="form-check-input" type="radio" name="awarenessCourseWithFee" value="explainedSituation" [(ngModel)]="awarenessCourseWithFee">
+              <label class="form-check-label">Briefly explain why it is not possible to pay the fee:</label>
+            </div>
+            <div *ngIf="awarenessCourseWithFee == 'explainedSituation'" class="form-group">
+              <textarea class="form-control" name="awarenessCourseWithFee"></textarea>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="capacityBuildingAndTraining card mb-3">
+      <div class="card-header">
+        Capacity Building & Training
+      </div>
+      <div class="card-body">
+        <div>
+          <label>Interested in training on any of the following topics (please tick)</label>
+          <div class="form-check">
+            <input class="form-check-input" type="checkbox" name="climate change">
+            <label class="form-check-label">Climate Change</label>
+          </div>
+          <div class="form-check">
+            <input class="form-check-input" type="checkbox" name="moral values">
+            <label class="form-check-label">Moral Values</label>
+          </div>
+          <div class="form-check">
+            <input class="form-check-input" type="checkbox" name="ethical Issues">
+            <label class="form-check-label">Ethical Issues</label>
+          </div>
+        </div>
+        <div class="mt-4">
+          <label>What level of training are you interested in:</label>
+          <div class="form-check">
+            <input class="form-check-input" type="radio" name="trainingLevel" value="beginner-level">
+            <label class="form-check-label">Beginner-level</label>
+          </div>
+          <div class="form-check">
+            <input class="form-check-input" type="radio" name="trainingLevel" value="intermediate-level">
+            <label class="form-check-label">Intermediate-level</label>
+          </div>
+          <div class="form-check">
+            <input class="form-check-input" type="radio" name="trainingLevel" value="advanced-level">
+            <label class="form-check-label">Advanced-level</label>
+          </div>
+        </div>
+        <div class="mt-4">
+          <label class="alert alert-dark">Please give your opinion on the following issues:</label>
+        </div>
+        <div class="mt-4">
+          <label>Capacity Building & Training Fees </label>
+          <div class="form-check">
+            <input class="form-check-input" type="radio" name="trainingFees" value="will get an sponsore" [(ngModel)]="trainingFees">
+            <label class="form-check-label">Training fees cannot be paid by me or my family. In that case I will get the sponsor myself</label>
+          </div>
+          <div class="form-check">
+            <input class="form-check-input" type="radio" name="trainingFees" value="will need a sponsore" [(ngModel)]="trainingFees">
+            <label class="form-check-label">Training fees cannot be paid by me or my family. In that case I will need a sponsor</label>
+          </div>
+          <div class="form-check">
+            <input class="form-check-input" type="radio" name="trainingFees" value="explainSituation" [(ngModel)]="trainingFees">
+            <label class="form-check-label">Briefly explain why it is not possible for you and your family to pay the fee:</label>
+          </div>
+          <div *ngIf="trainingFees == 'explainSituation'" >
+            <textarea class="form-control" name="trainingFees"></textarea>
+          </div>
+        </div>
+        <div class="mt-4">
+          <label>Which day of the week would be good for such an event? (Multiple days can also be selected)</label>
+          <div class="form-check">
+            <input class="form-check-input" type="checkbox" name="saturday">
+            <label class="form-check-label">Saturday</label>
+          </div>
+          <div class="form-check">
+            <input class="form-check-input" type="checkbox" name="sunday">
+            <label class="form-check-label">Sunday</label>
+          </div>
+          <div class="form-check">
+            <input class="form-check-input" type="checkbox" name="monday">
+            <label class="form-check-label">Monday</label>
+          </div>
+          <div class="form-check">
+            <input class="form-check-input" type="checkbox" name="tuesday">
+            <label class="form-check-label">Tuesday</label>
+          </div>
+          <div class="form-check">
+            <input class="form-check-input" type="checkbox" name="wednessday">
+            <label class="form-check-label">Wednessday</label>
+          </div>
+          <div class="form-check">
+            <input class="form-check-input" type="checkbox" name="thursday">
+            <label class="form-check-label">Thursday</label>
+          </div>
+          <div class="form-check">
+            <input class="form-check-input" type="checkbox" name="friday">
+            <label class="form-check-label">Friday</label>
+          </div>
+        </div>
+        <div class="mt-4">
+          <label>What time of day would it be better to organize? (Multiple times can be selected)</label>
+          <div class="form-check">
+            <input class="form-check-input" type="checkbox" name="morning">
+            <label class="form-check-label">morning (BDT within 8:00- 12:00)</label>
+          </div>
+          <div class="form-check">
+            <input class="form-check-input" type="checkbox" name="noon">
+            <label class="form-check-label">Noon (BDT within 13:30 -15:30)</label>
+          </div>
+          <div class="form-check">
+            <input class="form-check-input" type="checkbox" name="afternoon">
+            <label class="form-check-label">Afternoon (BDT within 16:00-18:00)</label>
+          </div>
+          <div class="form-check">
+            <input class="form-check-input" type="checkbox" name="night">
+            <label class="form-check-label">night (BDT within 17:00 - 22:00)</label>
+          </div>
+        </div>
+        <div class="mt-4">
+          <label>How much time do you want to spend regularly on capacity building and training?</label>
+          <div class="form-check">
+            <input class="form-check-input" type="radio" name="dedicatedTimeForTraining" value="2 hours daily" [(ngModel)]="dedicatedTimeForTraining">
+            <label class="form-check-label">At least 2 hours daily</label>
+          </div>
+          <div class="form-check">
+            <input class="form-check-input" type="radio" name="dedicatedTimeForTraining" value="3 hours daily" [(ngModel)]="dedicatedTimeForTraining">
+            <label class="form-check-label">At least 3 hours everyday</label>
+          </div>
+          <div class="form-check">
+            <input class="form-check-input" type="radio" name="dedicatedTimeForTraining" value="4 hours daily" [(ngModel)]="dedicatedTimeForTraining">
+            <label class="form-check-label">At least 4 hours everyday</label>
+          </div>
+          <div class="form-check">
+            <input class="form-check-input" type="radio" name="dedicatedTimeForTraining" value="2 days wide" [(ngModel)]="dedicatedTimeForTraining">
+            <label class="form-check-label">Two days wide</label>
+          </div>
+          <div class="form-check">
+            <input class="form-check-input" type="radio" name="dedicatedTimeForTraining" value="3 days long" [(ngModel)]="dedicatedTimeForTraining">
+            <label class="form-check-label">Three days long</label>
+          </div>
+          <div class="form-check">
+            <input class="form-check-input" type="radio" name="dedicatedTimeForTraining" value="4 days" [(ngModel)]="dedicatedTimeForTraining">
+            <label class="form-check-label">Four days</label>
+          </div>
+          <div class="form-check">
+            <input class="form-check-input" type="radio" name="dedicatedTimeForTraining" value="5 days" [(ngModel)]="dedicatedTimeForTraining">
+            <label class="form-check-label">Five days</label>
+          </div>
+          <div class="form-check">
+            <input class="form-check-input" type="radio" name="dedicatedTimeForTraining" value="6 days" [(ngModel)]="dedicatedTimeForTraining">
+            <label class="form-check-label">Six days</label>
+          </div>
+          <div class="form-check">
+            <input class="form-check-input" type="radio" name="dedicatedTimeForTraining" value="7 days" [(ngModel)]="dedicatedTimeForTraining">
+            <label class="form-check-label">Seven days</label>
+          </div>
+          <div class="form-check">
+            <input class="form-check-input" type="radio" name="dedicatedTimeForTraining" value="as much time needed" [(ngModel)]="dedicatedTimeForTraining">
+            <label class="form-check-label">I am willing to give as much time as needed for capacity building and training</label>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="research card mb-3">
+      <div class="card-header">Research</div>
+      <div class="card-body">
+        <div>
+          <label>Give your opinion about research work</label>
+          <div class="form-check">
+            <input class="form-check-input" type="radio" name="researchOpinion" value="beginner-level">
+            <label class="form-check-label">I have participated in research before</label>
+          </div>
+          <div class="form-check">
+            <input class="form-check-input" type="radio" name="researchOpinion" value="intermediate-level">
+            <label class="form-check-label">Intermediate-level</label>
+          </div>
+          <div class="form-check">
+            <input class="form-check-input" type="radio" name="researchOpinion" value="advanced-level">
+            <label class="form-check-label">Advanced-level</label>
+          </div>
+        </div>
+        <div class="mt-4"></div>
+      </div>
+    </div>
   </div>
   <div *ngIf="preferredAge == true && isBangla == true" class="form banglaForm" (submit)="onSubmit()">
     <div class="card mb-2 p-3">
@@ -522,455 +955,484 @@
         <strong>আপনি কোন ধরনের কার্যক্রমে অংশ নিতে আগ্রহী?</strong>
         <div class="small">(যে কোনো একটিতে কিংবা একাধিক ক্ষেত্রেও একইসাথে রেজিস্ট্রেশন করা যাবে)</div>
       </div>
-      <div class="form-check mt-2">
-        <input type="checkbox" class="form-check-input" name="Awareness-activities" [(ngModel)]="awarenessField">
-        <label class="from-check-label" fro="Awareness activities">সচেতনতামূলক কার্যক্রম</label>
-      </div>
-      <div class="form-check">
-        <input type="checkbox" class="form-check-input" name="capacity-building-and-training"[(ngModel)]="capacityBuildingNtrainingField">
-        <label class="from-check-label" fro="capacity-building-and-training">সক্ষমতা বৃদ্ধি ও প্রশিক্ষণ</label>
-      </div>
-      <div class="form-check">
-        <input type="checkbox" class="form-check-input" name="research" [(ngModel)]="researchField">
-        <label class="from-check-label" fro="research">গবেষণা</label>
-      </div>
-      <div class="form-check">
-        <input type="checkbox" class="form-check-input" name="special-activities" [(ngModel)]="otherField">
-        <label class="from-check-label" fro="special-activities">প্রভা অরোরা‘র অন্যান্য বিশেষ কার্যক্রম</label>
-      </div>
-    </div>
-    <div class="card mb-2 p-3">
-      <div class="col-md-6">
-        <div class="formQuestion mb-2">
-          <strong>অনুগ্রহ করে ভালোভাবে পড়ুন ও সঠিক তথ্য দিন</strong>
+      <div class="d-flex flex-wrap justify-content-between mt-3">
+        <div class="form-check">
+          <input type="checkbox" class="form-check-input" name="Awareness-activities" [(ngModel)]="awarenessField">
+          <label class="from-check-label" fro="Awareness activities">সচেতনতামূলক কার্যক্রম</label>
         </div>
-        <div class="form-group mb-3">
-          <label>আপনার পুরো নাম</label>
-          <input type="text" class="form-control" [(ngModel)]="applicantFullName">
+        <div class="form-check">
+          <input type="checkbox" class="form-check-input" name="capacity-building-and-training"[(ngModel)]="capacityBuildingNtrainingField">
+          <label class="from-check-label" fro="capacity-building-and-training">সক্ষমতা বৃদ্ধি ও প্রশিক্ষণ</label>
         </div>
-        <div class="form-group mb-3">
-          <label>আপনার ডাক নাম</label>
-          <input type="text" class="form-control" [(ngModel)]="applicantNickName">
+        <div class="form-check">
+          <input type="checkbox" class="form-check-input" name="research" [(ngModel)]="researchField">
+          <label class="from-check-label" fro="research">গবেষণা</label>
         </div>
-        <div class="form-group mb-3">
-          <label>লিঙ্গ</label>
-          <select  name="gender" class="form-control" [(ngModel)]="applicantGender">
-            <option value="male">পুরুষ</option>
-            <option value="female">নারী</option>
-            <option value="others">অন্যান্য</option>
-          </select>
-        </div>
-        <div class="form-group mb-3">
-          <label>দেশের নাম</label>
-          <select name="country" class="form-control" [(ngModel)]="applicantCountry">
-            <option value="bangladesh">Bangladesh</option>
-          </select>
-        </div>
-        <div class="form-group mb-3">
-          <lable for="address">
-            বিস্তারিত ঠিকানা
-            <span class="small">(শুধুমাত্র বিদেশীদের ক্ষেত্রে প্রযোজ্য)</span>
-          </lable>
-          <textarea name="address" class="form-control" [(ngModel)]="applicantAddress"></textarea>
-        </div>
-        <div class="form-group mb-3">
-          <label>বিভাগের নাম</label>
-          <select name="division" class="form-control" [(ngModel)]="applicantDivision">
-            <option value="dhaka">Dhaka</option>
-          </select>
-        </div>
-        <div class="form-group mb-3">
-          <label>জেলার নাম</label>
-          <select name="district" class="form-control" [(ngModel)]="applicantDistrict">
-            <option value="dhaka">Dhaka</option>
-          </select>
-        </div>
-        <div class="form-group mb-3">
-          <label>আপনার বয়স</label>
-          <input type="number" name="age" class="form-control" min="10" max="35" [(ngModel)]="applicantAge">
-        </div>
-        <div *ngIf="applicantAge < 18 && applicantAge != ''" class="mb-2">
-          <div class="form-group mb-3">
-            <label>যে কোন একজন বৈধ অভিভাবকের নাম</label>
-            <input type="text" class="form-control" name="guardianName" [(ngModel)]="guardianName">
-          </div>
-          <div class="form-group mb-3">
-            <label>অভিভাবকের জাতীয় পরিচয়পত্র / পাসপোর্ট নম্বর:</label>
-            <input type="number" class="form-control" name="guardianNID" [(ngModel)]="guardianPassportNumber">
-          </div>
-        </div>
-        <div *ngIf="applicantAge >= 18 && applicantAge != ''" class="form-group mb-3">
-          <lable>আপনার জাতীয় পরিচয়পত্র / পাসপোর্ট নম্বর</lable>
-          <input type="number" class="form-control" name="NID" [(ngModel)]="applicantNID">
-        </div>
-        <div class="form-group mb-3">
-          <label>নিজের /অভিভাবকের/ অফিসের <span class="small">(অনুগ্রহ করে কোন নাম্বারটি লিখছেন তা মনে রাখুন)</span></label>
-          <input type="number" class="form-control" name="phone" [(ngModel)]="applicantPhone">
+        <div class="form-check">
+          <input type="checkbox" class="form-check-input" name="special-activities" [(ngModel)]="otherField">
+          <label class="from-check-label" fro="special-activities">প্রভা অরোরা‘র অন্যান্য বিশেষ কার্যক্রম</label>
         </div>
       </div>
     </div>
     <div class="card mb-2">
       <div class="card-header">
-        Educational Qualifications
+        <div class="formQuestion mb-2">
+          <strong>অনুগ্রহ করে ভালোভাবে পড়ুন ও সঠিক তথ্য দিন</strong>
+        </div>
       </div>
       <div class="card-body">
-        <div class="formQuestion mb-2">
-          Give full details. N.B please give exact name of institution and titles of degrees. Please do not translate or equate to other degrees
-          Schools or other formal training or education from age 10 (e.g high school, technical school or apprenticeship), University or equivalent
+        <div class="row">
+          <div class="col-md-6">
+            <div class="form-group mb-3">
+              <label>আপনার পুরো নাম</label>
+              <input type="text" class="form-control" [(ngModel)]="applicantFullName">
+            </div>
+            <div class="form-group mb-3">
+              <label>আপনার ডাক নাম</label>
+              <input type="text" class="form-control" [(ngModel)]="applicantNickName">
+            </div>
+            <div class="form-group mb-3">
+              <label>লিঙ্গ</label>
+              <select  name="gender" class="form-control" [(ngModel)]="applicantGender">
+                <option value="male">পুরুষ</option>
+                <option value="female">নারী</option>
+                <option value="others">অন্যান্য</option>
+              </select>
+            </div>
+            <div class="form-group mb-3">
+              <label>দেশের নাম</label>
+              <select name="country" class="form-control" [(ngModel)]="applicantCountry">
+                <option value="bangladesh">Bangladesh</option>
+              </select>
+            </div>
+            <div class="form-group mb-3">
+              <lable for="address">
+                বিস্তারিত ঠিকানা
+                <span class="small">(শুধুমাত্র বিদেশীদের ক্ষেত্রে প্রযোজ্য)</span>
+              </lable>
+              <textarea name="address" class="form-control" [(ngModel)]="applicantAddress"></textarea>
+            </div>
+          </div>
+          <div class="col-md-6">
+            <div class="form-group mb-3">
+              <label>বিভাগের নাম</label>
+              <select name="division" class="form-control" [(ngModel)]="applicantDivision">
+                <option value="dhaka">Dhaka</option>
+              </select>
+            </div>
+            <div class="form-group mb-3">
+              <label>জেলার নাম</label>
+              <select name="district" class="form-control" [(ngModel)]="applicantDistrict">
+                <option value="dhaka">Dhaka</option>
+              </select>
+            </div>
+            <div class="form-group mb-3">
+              <label>আপনার বয়স</label>
+              <input type="number" name="age" class="form-control" min="10" max="35" [(ngModel)]="applicantAge">
+            </div>
+            <div *ngIf="applicantAge < 18 && applicantAge != ''" class="mb-2">
+              <div class="form-group mb-3">
+                <label>যে কোন একজন বৈধ অভিভাবকের নাম</label>
+                <input type="text" class="form-control" name="guardianName" [(ngModel)]="guardianName">
+              </div>
+              <div class="form-group mb-3">
+                <label>অভিভাবকের জাতীয় পরিচয়পত্র / পাসপোর্ট নম্বর:</label>
+                <input type="number" class="form-control" name="guardianNID" [(ngModel)]="guardianPassportNumber">
+              </div>
+            </div>
+            <div *ngIf="applicantAge >= 18 && applicantAge != ''" class="form-group mb-3">
+              <lable>আপনার জাতীয় পরিচয়পত্র / পাসপোর্ট নম্বর</lable>
+              <input type="number" class="form-control" name="NID" [(ngModel)]="applicantNID">
+            </div>
+            <div class="form-group mb-3">
+              <label class="d-grid">নিজের /অভিভাবকের/ অফিসের মুঠোফোন নাম্বার<span class="small">(অনুগ্রহ করে কোন নাম্বারটি লিখছেন তা মনে রাখুন)</span></label>
+              <input type="number" class="form-control" name="phone" [(ngModel)]="applicantPhone">
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="card mb-2">
+      <div class="card-header">
+        শিক্ষাগত যোগ্যতা
+      </div>
+      <div class="card-body">
+        <div class="formQuestion text-center mb-lg-3">
+          সম্পূর্ণ বিবরণ দিন। দয়া করে শিক্ষা প্রতিষ্ঠানের সঠিক নাম এবং ডিগ্রীর নাম দিন। অনুগ্রহ করে অন্য ডিগ্রীর সমান করবেন না
+          বিদ্যালয় বা অন্যান্য আনুষ্ঠানিক প্রশিক্ষণ বা ১০ বছর বয়স থেকে শিক্ষা (যেমন- উচ্চ বিদ্যালয়, টেকনিকাল স্কুল বা শিক্ষানবিশী), বিশ্ববিদ্যালয় বা সমমানের ডিগ্রী
+        </div>
+        <div class="row">
+          <div class="col-md-6">
+            <div class="form-group mb-3">
+              <label>প্রতিষ্ঠানের নাম <span class="small">(শ্রেণি উল্লেখ করুন)</span></label>
+              <input type="text" class="form-control" [(ngModel)]="institutionName">
+            </div>
+            <div class="form-group mb-3">
+              <label>ঠিকানা</label>
+              <input type="text" class="form-control" [(ngModel)]="institutionAddress">
+            </div>
+            <div class="form-group mb-3">
+              <label>দেশ</label>
+              <input type="text" class="form-control" [(ngModel)]="institutionCountry">
+            </div>
+            <div class="form-group mb-3">
+              <label>কবে থেকে কবে পড়েছেন</label>
+              <div class="educationDuration d-flex">
+                <div class="mr-1">
+                  <label class="small">থেকে</label>
+                  <input type="date" class="form-control" [(ngModel)]="educationStartDate">
+                </div>
+                <div>
+                  <label class="small">পর্যন্ত</label>
+                  <input type="date" class="form-control" [(ngModel)]="educationEndDate">
+                </div>
+              </div>
+            </div>
+            <div class="form-group mb-3">
+              <label>প্রকার / ডিগ্রী এবং একাডেমিক সনদ</label>
+              <input type="text" class="form-control" [(ngModel)]="applicantDegree">
+            </div>
+          </div>
+          <div class="col-md-6">
+            <div class="form-group mb-3">
+              <label>প্রাপ্ত সনদ বা ডিপ্লোমা/ পড়াশোনার মূল কোর্স বিষয়</label>
+              <input type="text" class="form-control" [(ngModel)]="applicantCertificate">
+            </div>
+            <div class="form-group mb-3">
+              <label>ইমেইল <span class="small">(যদি থাকে)</span></label>
+              <input type="email" class="form-control" [(ngModel)]="applicantEmail">
+            </div>
+            <div class="form-group mb-3">
+              <label>রক্তের গ্রুপ <span class="small">(যদি জানেন)</span> </label>
+              <input type="text" class="form-control" [(ngModel)]="applicantBloodGroup">
+            </div>
+            <div class="bloodDonation mb-3">
+              <label>আমি রক্তদানে আগ্রহী</label>
+              <div class="form-check">
+                <input class="form-check-input" type="radio" name="bloodDonation" value="Yes"
+                       [(ngModel)]="interestedInBloodDonation" checked>
+                <label class="form-check-label">
+                  হ্যাঁ
+                </label>
+              </div>
+              <div class="form-check">
+                <input class="form-check-input" type="radio" name="bloodDonation" value="No"
+                       [(ngModel)]="notInterestedInBloodDonation" checked>
+                <label class="form-check-label">
+                  না
+                </label>
+              </div>
+              <div class="form-check">
+                <input class="form-check-input" type="radio" name="bloodDonation" value="Interested in future"
+                       [(ngModel)]="InterestedInBloodDonationInFuture" checked>
+                <label class="form-check-label">
+                  আমার রক্তদানের বয়স হয়নি, তবে ভবিষ্যতে দানে ইচ্ছুক
+                </label>
+              </div>
+            </div>
+            <div class="form-group mb-3">
+              <label>জন্মদিন</label>
+              <input type="date" class="form-control" [(ngModel)]="applicantBirthday">
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="specialQualities card mb-3">
+      <div class="card-header">
+        <strong>বিশেষ দক্ষতা<span class="small"> (একাধিক বিকল্প নির্বাচন করা যেতে পারে)</span></strong>
+      </div>
+      <div class="card-body row">
+        <div class="col-md-6">
+          <div class="form-check mb-1">
+            <input class="form-check-input" type="checkbox" value="">
+            <label class="form-check-label">
+              সময় ব্যবস্থাপনা
+            </label>
+          </div>
+          <div class="form-check mb-1">
+            <input class="form-check-input" type="checkbox" value="">
+            <label class="form-check-label">
+              চাপ ব্যবস্থাপনা
+            </label>
+          </div>
+          <div class="form-check mb-1">
+            <input class="form-check-input" type="checkbox" value="">
+            <label class="form-check-label">
+              অধ্যয়নের দক্ষতা
+            </label>
+          </div>
+          <div class="form-check mb-1">
+            <input class="form-check-input" type="checkbox" value="">
+            <label class="form-check-label">
+              অর্থ ব্যবস্থাপনা
+            </label>
+          </div>
+          <div class="form-check mb-1">
+            <input class="form-check-input" type="checkbox" value="">
+            <label class="form-check-label">
+              দৃঢ়তার দক্ষতা
+            </label>
+          </div>
+          <div class="form-check mb-1">
+            <input class="form-check-input" type="checkbox" value="">
+            <label class="form-check-label">
+              উন্নত স্ব-যত্ন দক্ষতা
+            </label>
+          </div>
+          <div class="form-check mb-1">
+            <input class="form-check-input" type="checkbox" value="">
+            <label class="form-check-label">
+              ঝুঁকিপূর্ণ আচরণ থেকে নিরাপদ রাখা এবং মেনে চলা
+            </label>
+          </div>
+          <div class="form-check mb-1">
+            <input class="form-check-input" type="checkbox" value="">
+            <label class="form-check-label">
+              প্রয়োজনে সহায়তা চাওয়া
+            </label>
+          </div>
         </div>
         <div class="col-md-6">
-          <div class="form-group mb-3">
-            <label>Institution Name</label>
-            <input type="string" class="form-control" [(ngModel)]="institutionName">
+          <div class="form-check mb-1">
+            <input class="form-check-input" type="checkbox" value="">
+            <label class="form-check-label">
+              বিধি ও নীতিমালার সম্মান করা
+            </label>
           </div>
-          <div class="form-group mb-3">
-            <label>Address</label>
-            <input type="text" class="form-control" [(ngModel)]="institutionAddress">
+          <div class="form-check mb-1">
+            <input class="form-check-input" type="checkbox" value="">
+            <label class="form-check-label">
+              সততা, অখণ্ডতা এবং অধ্যবসায় প্রদর্শন করা
+            </label>
           </div>
-          <div class="form-group mb-3">
-            <label>Country</label>
-            <input type="text" class="form-control" [(ngModel)]="institutionCountry">
+          <div class="form-check mb-1">
+            <input class="form-check-input" type="checkbox" value="">
+            <label class="form-check-label">
+              প্রযুক্তিগত দক্ষতা: প্রোগ্রামিং ভাষা, প্রচলিত অপারেটিং সিস্টেম, সফটওয়্যার দক্ষতা,
+              প্রযুক্তিগত রচনা, প্রকল্প পরিচালনা, ডেটা বিশ্লেষণ, ওয়েবসাইট আপডেট করা, নকশার কাজ
+            </label>
           </div>
-          <div class="form-group mb-3">
-            <label>Years attended</label>
-            <div class="educationDuration d-flex">
-              <div class="mr-1">
-                <label class="small">From</label>
-                <input type="date" class="form-control" [(ngModel)]="educationStartDate">
-              </div>
-              <div>
-                <label class="small">To</label>
-                <input type="date" class="form-control" [(ngModel)]="educationEndDate">
-              </div>
-            </div>
-          </div>
-          <div class="form-group mb-3">
-            <label>Type / Degrees and academic distinctions</label>
-            <input type="text" class="form-control" [(ngModel)]="applicantDegree">
-          </div>
-          <div class="form-group mb-3">
-            <label>Certificates or diplomas obtained / Main Course of study</label>
-            <input type="text" class="form-control" [(ngModel)]="applicantCertificate">
-          </div>
-          <div class="form-group mb-3">
-            <label>Your personal email address<span class="small">(if you have any)</span></label>
-            <input type="email" class="form-control" [(ngModel)]="applicantEmail">
-          </div>
-          <div class="form-group mb-3">
-            <label>Blood group <span class="small">(if you know)</span> </label>
-            <input type="text" class="form-control" [(ngModel)]="applicantBloodGroup">
-          </div>
-          <div class="bloodDonation mb-3">
-            <label>I am Interested in donating blood</label>
-            <div class="form-check">
-              <input class="form-check-input" type="radio" name="bloodDonation" value="Yes"
-                     [(ngModel)]="interestedInBloodDonation" checked>
-              <label class="form-check-label">
-                Yes
-              </label>
-            </div>
-            <div class="form-check">
-              <input class="form-check-input" type="radio" name="bloodDonation" value="No"
-                     [(ngModel)]="notInterestedInBloodDonation" checked>
-              <label class="form-check-label">
-                No
-              </label>
-            </div>
-            <div class="form-check">
-              <input class="form-check-input" type="radio" name="bloodDonation" value="Interested in future"
-                     [(ngModel)]="InterestedInBloodDonationInFuture" checked>
-              <label class="form-check-label">
-                I am not old enough to donate blood yet, eager to give in the future
-              </label>
-            </div>
-          </div>
-          <div class="form-group mb-3">
-            <label>Birthday</label>
-            <input type="date" class="form-control" [(ngModel)]="applicantBirthday">
+          <div class="form-check mb-1">
+            <input class="form-check-input" type="checkbox" value="">
+            <label class="form-check-label">
+              ফটোগ্রাফি
+            </label>
           </div>
         </div>
       </div>
     </div>
-    <div class="specialQualities card p-3 mb-3">
-      <strong>Special Qualities<span class="small"> (Multiple options can be selected)</span></strong>
-      <div class="form-check mb-1">
-        <input class="form-check-input" type="checkbox" value="">
-        <label class="form-check-label">
-          Time Management
-        </label>
+    <div class="hobbies card mb-3">
+      <div class="card-header">
+        <strong>আমার শখ / আগ্রহ</strong>
       </div>
-      <div class="form-check mb-1">
-        <input class="form-check-input" type="checkbox" value="">
-        <label class="form-check-label">
-          Stress Management
-        </label>
-      </div>
-      <div class="form-check mb-1">
-        <input class="form-check-input" type="checkbox" value="">
-        <label class="form-check-label">
-          Study Skills
-        </label>
-      </div>
-      <div class="form-check mb-1">
-        <input class="form-check-input" type="checkbox" value="">
-        <label class="form-check-label">
-          Money Management
-        </label>
-      </div>
-      <div class="form-check mb-1">
-        <input class="form-check-input" type="checkbox" value="">
-        <label class="form-check-label">
-          Assertiveness skills
-        </label>
-      </div>
-      <div class="form-check mb-1">
-        <input class="form-check-input" type="checkbox" value="">
-        <label class="form-check-label">
-          Well-developed self care skills
-        </label>
-      </div>
-      <div class="form-check mb-1">
-        <input class="form-check-input" type="checkbox" value="">
-        <label class="form-check-label">
-          Keeping safe and abiding risky behaviors
-        </label>
-      </div>
-      <div class="form-check mb-1">
-        <input class="form-check-input" type="checkbox" value="">
-        <label class="form-check-label">
-          Seeking assistance when needed
-        </label>
-      </div>
-      <div class="form-check mb-1">
-        <input class="form-check-input" type="checkbox" value="">
-        <label class="form-check-label">
-          Respecting the rules and policies
-        </label>
-      </div>
-      <div class="form-check mb-1">
-        <input class="form-check-input" type="checkbox" value="">
-        <label class="form-check-label">
-          Displaying honesty, integrity and perseverance
-        </label>
-      </div>
-      <div class="form-check mb-1">
-        <input class="form-check-input" type="checkbox" value="">
-        <label class="form-check-label">
-          Technical skills: Programming languages, Common operating systems,
-          Software proficiency, Technical writing, Project management,
-          Data analysis, updating website, design work
-        </label>
-      </div>
-      <div class="form-check mb-1">
-        <input class="form-check-input" type="checkbox" value="">
-        <label class="form-check-label">
-          Photography
-        </label>
-      </div>
-    </div>
-    <div class="hobbies card p-3 mb-3">
-      <strong>My hobbies/ interest</strong>
-      <div class="form-check mb-1">
-        <input class="form-check-input" type="checkbox" value="">
-        <label class="form-check-label">
-          Reading books
-        </label>
-      </div>
-      <div class="form-check mb-1">
-        <input class="form-check-input" type="checkbox" value="">
-        <label class="form-check-label">
-          Blogging
-        </label>
-      </div>
-      <div class="form-check mb-1">
-        <input class="form-check-input" type="checkbox" value="">
-        <label class="form-check-label">
-          Dancing
-        </label>
-      </div>
-      <div class="form-check mb-1">
-        <input class="form-check-input" type="checkbox" value="">
-        <label class="form-check-label">
-          Singing
-        </label>
-      </div>
-      <div class="form-check mb-1">
-        <input class="form-check-input" type="checkbox" value="">
-        <label class="form-check-label">
-          Listening to music
-        </label>
-      </div>
-      <div class="form-check mb-1">
-        <input class="form-check-input" type="checkbox" value="">
-        <label class="form-check-label">
-          Playing musical instruments (piano, guitar etc.)
-        </label>
-      </div>
-      <div class="form-check mb-1">
-        <input class="form-check-input" type="checkbox" value="">
-        <label class="form-check-label">
-          Learning new languages
-        </label>
-      </div>
-      <div class="form-check mb-1">
-        <input class="form-check-input" type="checkbox" value="">
-        <label class="form-check-label">
-          Shopping
-        </label>
-      </div>
-      <div class="form-check mb-1">
-        <input class="form-check-input" type="checkbox" value="">
-        <label class="form-check-label">
-          Traveling
-        </label>
-      </div>
-      <div class="form-check mb-1">
-        <input class="form-check-input" type="checkbox" value="">
-        <label class="form-check-label">
-          Exercising
-        </label>
-      </div>
-      <div class="form-check mb-1">
-        <input class="form-check-input" type="checkbox" value="">
-        <label class="form-check-label">
-          Drawing
-        </label>
-      </div>
-      <div class="form-check mb-1">
-        <input class="form-check-input" type="checkbox" value="">
-        <label class="form-check-label">
-          Painting
-        </label>
-      </div>
-      <div class="form-check mb-1">
-        <input class="form-check-input" type="checkbox" value="">
-        <label class="form-check-label">
-          Collecting things
-        </label>
-      </div>
-      <div class="form-check mb-1">
-        <input class="form-check-input" type="checkbox" value="">
-        <label class="form-check-label">
-          Playing computer games
-        </label>
-      </div>
-      <div class="form-check mb-1">
-        <input class="form-check-input" type="checkbox" value="">
-        <label class="form-check-label">
-          Cooking
-        </label>
-      </div>
-      <div class="form-check mb-1">
-        <input class="form-check-input" type="checkbox" value="">
-        <label class="form-check-label">
-          Gardening
-        </label>
-      </div>
-      <div class="form-check mb-1">
-        <input class="form-check-input" type="checkbox" value="">
-        <label class="form-check-label">
-          Doing crafts (handmade)
-        </label>
-      </div>
-      <div class="form-check mb-1">
-        <input class="form-check-input" type="checkbox" value="">
-        <label class="form-check-label">
-          Embroidering
-        </label>
-      </div>
-      <div class="form-check mb-1">
-        <input class="form-check-input" type="checkbox" value="">
-        <label class="form-check-label">
-          Sewing
-        </label>
-      </div>
-      <div class="form-check mb-1">
-        <input class="form-check-input" type="checkbox" value="">
-        <label class="form-check-label">
-          Playing board games
-        </label>
-      </div>
-      <div class="form-check mb-1">
-        <input class="form-check-input" type="checkbox" value="">
-        <label class="form-check-label">
-          Walking
-        </label>
-      </div>
-      <div class="form-check mb-1">
-        <input class="form-check-input" type="checkbox" value="">
-        <label class="form-check-label">
-          Writing stories
-        </label>
-      </div>
-      <div class="form-check mb-1">
-        <input class="form-check-input" type="checkbox" value="">
-        <label class="form-check-label">
-          Fishing
-        </label>
-      </div>
-      <div class="form-group mb-1">
-        <label>Other: please specify ...</label>
-        <input class="form-control" type="text" >
+      <div class="card-body row">
+        <div class="col-md-6">
+          <div class="form-check mb-1">
+            <input class="form-check-input" type="checkbox" value="">
+            <label class="form-check-label">
+              বই পড়া
+            </label>
+          </div>
+          <div class="form-check mb-1">
+            <input class="form-check-input" type="checkbox" value="">
+            <label class="form-check-label">
+              ব্লগিং
+            </label>
+          </div>
+          <div class="form-check mb-1">
+            <input class="form-check-input" type="checkbox" value="">
+            <label class="form-check-label">
+              নাচ
+            </label>
+          </div>
+          <div class="form-check mb-1">
+            <input class="form-check-input" type="checkbox" value="">
+            <label class="form-check-label">
+              গান
+            </label>
+          </div>
+          <div class="form-check mb-1">
+            <input class="form-check-input" type="checkbox" value="">
+            <label class="form-check-label">
+              গান শোনা
+            </label>
+          </div>
+          <div class="form-check mb-1">
+            <input class="form-check-input" type="checkbox" value="">
+            <label class="form-check-label">
+              বাদ্যযন্ত্র বাজানো (পিয়ানো, গিটার ইত্যাদি)
+            </label>
+          </div>
+          <div class="form-check mb-1">
+            <input class="form-check-input" type="checkbox" value="">
+            <label class="form-check-label">
+              নতুন ভাষা শেখা
+            </label>
+          </div>
+          <div class="form-check mb-1">
+            <input class="form-check-input" type="checkbox" value="">
+            <label class="form-check-label">
+              কেনাকাটা
+            </label>
+          </div>
+          <div class="form-check mb-1">
+            <input class="form-check-input" type="checkbox" value="">
+            <label class="form-check-label">
+              ভ্রমণ
+            </label>
+          </div>
+          <div class="form-check mb-1">
+            <input class="form-check-input" type="checkbox" value="">
+            <label class="form-check-label">
+              শরীরচর্চা
+            </label>
+          </div>
+          <div class="form-check mb-1">
+            <input class="form-check-input" type="checkbox" value="">
+            <label class="form-check-label">
+              অঙ্কন
+            </label>
+          </div>
+          <div class="form-check mb-1">
+            <input class="form-check-input" type="checkbox" value="">
+            <label class="form-check-label">
+              পেইন্টিং
+            </label>
+          </div>
+          <div class="form-check mb-1">
+            <input class="form-check-input" type="checkbox" value="">
+            <label class="form-check-label">
+              জিনিস সংগ্রহ করা
+            </label>
+          </div>
+          <div class="form-check mb-1">
+            <input class="form-check-input" type="checkbox" value="">
+            <label class="form-check-label">
+              কম্পিউটার গেম খেলা
+            </label>
+          </div>
+        </div>
+        <div class="col-md-6">
+          <div class="form-check mb-1">
+            <input class="form-check-input" type="checkbox" value="">
+            <label class="form-check-label">
+              রান্না
+            </label>
+          </div>
+          <div class="form-check mb-1">
+            <input class="form-check-input" type="checkbox" value="">
+            <label class="form-check-label">
+              বাগান করা
+            </label>
+          </div>
+          <div class="form-check mb-1">
+            <input class="form-check-input" type="checkbox" value="">
+            <label class="form-check-label">
+              কারুশিল্প (হাতে করা)
+            </label>
+          </div>
+          <div class="form-check mb-1">
+            <input class="form-check-input" type="checkbox" value="">
+            <label class="form-check-label">
+              সুতার কাজ
+            </label>
+          </div>
+          <div class="form-check mb-1">
+            <input class="form-check-input" type="checkbox" value="">
+            <label class="form-check-label">
+              সেলাই
+            </label>
+          </div>
+          <div class="form-check mb-1">
+            <input class="form-check-input" type="checkbox" value="">
+            <label class="form-check-label">
+              বোর্ড গেম খেলা
+            </label>
+          </div>
+          <div class="form-check mb-1">
+            <input class="form-check-input" type="checkbox" value="">
+            <label class="form-check-label">
+              হাঁটা
+            </label>
+          </div>
+          <div class="form-check mb-1">
+            <input class="form-check-input" type="checkbox" value="">
+            <label class="form-check-label">
+              গল্প লেখা
+            </label>
+          </div>
+          <div class="form-check mb-1">
+            <input class="form-check-input" type="checkbox" value="">
+            <label class="form-check-label">
+              মাছ ধরা
+            </label>
+          </div>
+          <div class="form-group mb-1">
+            <label>অন্যান্য: দয়া করে নির্দিষ্ট করুন ...</label>
+            <input class="form-control" type="text" >
+          </div>
+        </div>
       </div>
     </div>
     <div class="opportunities card p-3 mb-3">
-      <strong>Have you ever had the opportunity to learn about the program you are interested in participating in?</strong>
+      <strong>আপনি যে কর্মসূচিতে অংশ নিতে আগ্রহী সে সম্পর্কে কি এর আগে কখনও জানার সুযোগ হয়েছে?</strong>
       <div class="form-check mb-1">
         <input class="form-check-input" type="checkbox" value="">
         <label class="form-check-label">
-          From various social media
+          বিভিন্ন সোশ্যাল মিডিয়া থেকে
         </label>
       </div>
       <div class="form-check mb-1">
         <input class="form-check-input" type="checkbox" value="">
         <label class="form-check-label">
-          Not yet. So curious to know
+          এখনও না। জানতে আগ্রহী
         </label>
       </div>
       <div class="form-check mb-1">
         <input class="form-check-input" type="checkbox" value="">
         <label class="form-check-label">
-          From friends
+          বন্ধুদের থেকে
         </label>
       </div>
       <div class="form-check mb-1">
         <input class="form-check-input" type="checkbox" value="">
         <label class="form-check-label">
-          From colleagues
+          সহকর্মীদের থেকে
         </label>
       </div>
       <div class="form-check mb-1">
         <input class="form-check-input" type="checkbox" value="">
         <label class="form-check-label">
-          From family
+          পরিবার থেকে
         </label>
       </div>
       <div class="form-check mb-1">
         <input class="form-check-input" type="checkbox" value="">
         <label class="form-check-label">
-          From the teacher
+          শিক্ষকের কাছ থেকে
         </label>
       </div>
       <div class="form-check mb-1">
         <input class="form-check-input" type="checkbox" value="">
         <label class="form-check-label">
-          Read books, outside the textbook
+          পাঠ্যপুস্তকের বাইরে বই পড়ে
         </label>
       </div>
       <div class="form-check mb-1">
         <input class="form-check-input" type="checkbox" value="">
         <label class="form-check-label">
-          In collaboration with the media (watching television programs, listening to radio programs, etc.)
+          মিডিয়ার সহযোগিতায় (টেলিভিশন অনুষ্ঠানগুলি দেখে, রেডিও প্রোগ্রামগুলি শুনে ইত্যাদি)
         </label>
       </div>
       <div class="form-check mb-1">
         <input class="form-check-input" type="checkbox" value="">
         <label class="form-check-label">
-          Read textbooks
+          পাঠ্যপুস্তকের বই পড়ে
         </label>
       </div>
       <div class="form-group mb-1">
-        <label>Other: please specify ...</label>
+        <label>অন্যান্য (উল্লেখ করুন) …</label>
         <input class="form-control" type="text" >
       </div>
     </div>

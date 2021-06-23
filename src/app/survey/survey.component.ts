@@ -44,6 +44,12 @@ export class SurveyComponent implements OnInit {
   notInterestedInBloodDonation: string;
   InterestedInBloodDonationInFuture: string;
   applicantBirthday: string;
+  practicingOnlineAwareness: string;
+  regularAwarenessPractice: string;
+  awarenessCourse: string;
+  awarenessCourseWithFee: string;
+  trainingFees: string;
+  dedicatedTimeForTraining: string;
 
   constructor(private crudService: CrudService) { }
 
